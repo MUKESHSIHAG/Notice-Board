@@ -37,9 +37,10 @@ def create_notice():
 @app.route("/notice")
 def view_notice():
     notices = Notice.query.all()
-    # print(notices[id])
-    for notice in notices:
-        print(notice.id)
+    notices.reverse()
+
+    # for notice in notices:
+    #     print(notice.id)
     return render_template("notice.html", notices=notices)
 
 @app.route("/edit_notice", methods=["GET","POST"])
@@ -56,6 +57,7 @@ def edit_notice():
         db.session.commit()
         flash("Notice updated Successfully")
     notices = Notice.query.all()
+    notices.reverse()
     return render_template('edit.html', notices=notices)
 
 @app.route("/delete", methods=["POST"])
