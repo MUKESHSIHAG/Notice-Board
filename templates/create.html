@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <title>create notice</title>
+    <style>
+    .submit_btn{
+      margin-left: 40%; margin-top: 5%; width: auto;
+    }
+    /* @media screen and (min-width: 700px){
+      .submit_btn {width: auto;}
+    } */
+    </style>
+</head>
+<body>
+    <a href="/" class="btn btn-info">Go Home</a>
+    <form action="/create_notice" method="POST">
+        <div class="input-group mb-3" style="margin-right: 30%;">
+        </div>
+        <div class="md-form" style="margin-right: 30%; margin-left: 30%; margin-top: 5%;">
+            <input name="title" required type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
+            <textarea required style="margin-top: 5%;" id="form" name="msg" class="md-textarea form-control"placeholder="Enter notice" rows="5"></textarea>
+            <input type="submit" class="submit_btn btn btn-primary" value="submit">
+        </div>
+    </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      $("document").ready( function () {
+        for (var i=0; i<messages.length; i++) {
+          alert(messages[i]);
+        } 
+      });
+    </script>
+    {% endif %}
+    {% endwith %}
+</body>
+</html>
