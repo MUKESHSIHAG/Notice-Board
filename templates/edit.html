@@ -15,9 +15,11 @@
     </style>
 </head>
 <body>
-    <a href="/" class="home_btn btn btn-primary">Go Home</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark row" style="margin-bottom: 5%; height: 10%;">
+        <a class="navbar-brand col-md-5 col-xs-5 text-success" href="/">Home</a>
+        <h3 class="text-light col-md-6 col-xs-5">Edit Notices</h3>
+    </nav>
     {% for notice in notices %}
-        <!-- <p>{{notice.title}}</p> -->
     <div style="margin-bottom: 5%;">
         <form method="POST" action="./edit_notice">
             <input type="hidden" value="{{notice.id}}" name="notice_id">
@@ -29,7 +31,7 @@
         </form>
         <form method="POST" action="./delete" style="margin-top: 0%;">
             <input type="hidden" value="{{notice.id}}" name="notice_id">
-            <input class="sub_btn btn btn-danger" type="submit" value="Delete" style="">
+            <input class="sub_btn btn btn-danger" type="submit" value="Delete">
         </form>
     </div>
     {% endfor %}

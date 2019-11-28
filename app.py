@@ -40,7 +40,7 @@ def view_notice():
     notices.reverse()
 
     # for notice in notices:
-    #     print(notice.id)
+    #     print(notice.body[:20])
     return render_template("notice.html", notices=notices)
 
 @app.route("/edit_notice", methods=["GET","POST"])

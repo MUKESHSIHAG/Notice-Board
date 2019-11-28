@@ -11,20 +11,23 @@
     .submit_btn{
       margin-left: 40%; margin-top: 5%; width: auto;
     }
-    /* @media screen and (min-width: 700px){
-      .submit_btn {width: auto;}
-    } */
+    @media screen and (max-width: 600px){
+      .submit_btn {margin-left: 24%;}
+    }
     </style>
 </head>
 <body>
-    <a href="/" class="btn btn-info">Go Home</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark row" style="height: 10%;">
+      <a class="navbar-brand col-md-5 col-xs-5 text-success" href="/">Home</a>
+      <h3 class="text-light col-md-6 col-xs-5">Create New Notice</h3>
+    </nav>
     <form action="/create_notice" method="POST">
         <div class="input-group mb-3" style="margin-right: 30%;">
         </div>
         <div class="md-form" style="margin-right: 30%; margin-left: 30%; margin-top: 5%;">
-            <input name="title" required type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
+            <input name="title" required type="text" class="form-control text-center" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
             <textarea required style="margin-top: 5%;" id="form" name="msg" class="md-textarea form-control"placeholder="Enter notice" rows="5"></textarea>
-            <input type="submit" class="submit_btn btn btn-primary" value="submit">
+            <input type="submit" class="submit_btn btn btn-primary" value="Submit">
         </div>
     </form>
     {% with messages = get_flashed_messages() %}

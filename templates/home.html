@@ -6,13 +6,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>home</title>
     <style>
+    .navbar {height:10%;}
     @media screen and (max-width: 600px) {
       a {margin-top: 5%;}
+      .navbar {height: auto;}
     }
     </style>
 </head>
 <body>
-  <center><h3>Notice System</h3></center>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark row" style="">
+    <a class="navbar-brand col-md-5 col-xs-5" style="visibility: hidden;" href="/">Home</a>
+    <h3 class="text-light col-md-6 col-xs-5">Notice System</h3>
+  </nav>
   <div class="row" style="margin-top: 20%;">
     <a style="margin-left: 4%;" class="btn btn-primary col-md-3 col-sm-12" href="/notice">View all notices</a>
     <div class="col-md-1"></div>
